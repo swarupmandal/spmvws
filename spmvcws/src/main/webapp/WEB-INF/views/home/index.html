@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome to the Spring MVC Commercetools Platform Quickstart application!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header">Header</div>
+<div class="container">
+    <div class="text-center">
+        <h1>Test</h1>
+        <p class="lead">
+            Welcome to the Spring MVC Commercetools Platform Quickstart application!
+        </p>
+    </div>
+
+
+
+    <div class="row">
+        <ul th:each="prod : ${allProducts}">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img width="200" height="200" src="image.jpg" th:src="${prod.masterVariant.images[0].url}" th:unless="${prod.masterVariant.images.isEmpty()}" />
+                    <div class="caption">
+                        <h3 th:text="${prod.name.find(locale).orElse('missing product name')}">product name </h3>
+                        <p th:utext="${prod.description.find(locale).orElse('missing product description')}" th:unless="${prod.description == null}">product description</p>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+
+
+    <div th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+mvn archetype:generate -DgroupId=com.cse -DartifactId=CounterWebApp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+

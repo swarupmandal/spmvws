@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: subrata
+Build-Jdk: 1.8.0_171
+Implementation-Title: Spring MVC Application
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: com.spmv
+Implementation-Vendor: Pivotal Software, Inc.
+Created-By: Maven Integration for Eclipse
+
